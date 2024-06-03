@@ -1,0 +1,16 @@
+:root {
+    --main-bg-color: #012611;
+    --main-text-color: #69A660;
+    --border-color: #000D09;
+    --other-color: #014017;
+    --next-color: #247329;
+    --main-font:
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}

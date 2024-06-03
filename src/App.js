@@ -14,7 +14,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${appId}&app_key=${appKey}`);
+        const response = await fetch(`https://api.edamam.com/search?q=&app_id=${appId}&app_key=${appKey}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -39,16 +39,7 @@ const App = () => {
   }
 
   return <div>
-      <h1>Recipes</h1>
-      <ul>
-        {recipes.map((recipe, index) => (
-          <li key={index}>
-            <a href={recipe.recipe.url} target="_blank" rel="noopener noreferrer">
-              {recipe.recipe.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+    
     </div>
 }
 
