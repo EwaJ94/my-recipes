@@ -1,0 +1,67 @@
+:root {
+    --main-bg-color: #012611;
+    --main-text-color: #69A660;
+    --text-color: #B0BFB4;
+    /* --border-color: #000D09; */
+    --other-color: #014017;
+    --next-color: #247329;
+    --main-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.search-field {
+    width: 100vw;
+
+}
+
+.icon {
+    position: absolute;
+    left: 5rem;
+    top: 2rem;
+    height: 5rem;
+    opacity: 0.5;
+}
+
+.icon:hover {
+    opacity: 1;
+    transform: rotateY(180deg);
+}
+
+form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 2rem 5rem;
+    height: 5rem;
+}
+
+.search-recipe {
+    width: 25rem;
+    height: 1.5rem;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+    outline: none;
+}
+
+.find-button {
+    width: 5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight:600;
+    outline: none;
+    color: var(--main-text-color);
+    background-color: var(--other-color);
+}
+
+.find-button:hover {
+    color: var(--other-color);
+    background-color: var(--main-text-color);
+}
+
+.find-button:active {
+    transform: scale(0.9);
+}

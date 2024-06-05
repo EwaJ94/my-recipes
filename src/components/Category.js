@@ -2,9 +2,9 @@ import "./Category.css"
 
 const Category = () => {
   
-    return <div>
-   
-      </div>
+    return <section className="category">
+        
+      </section>
   }
   
   export default Category

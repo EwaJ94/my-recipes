@@ -1,0 +1,16 @@
+:root {
+    --main-bg-color: #012611;
+    --main-text-color: #69A660;
+    --text-color: #B0BFB4;
+    --border-color: #000D09;
+    --other-color: #014017;
+    --next-color: #247329;
+    --main-font:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.main-content {
+    display: flex;
+    border: 0.3rem solid black;
+    height: 30rem;
+    width: 20rem;
+}

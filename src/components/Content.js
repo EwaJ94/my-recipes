@@ -1,7 +1,7 @@
 import "./Content.css"
 
 const Content = () => {
-    return <div>
+    return <section className="main-content">
           {/* <h1>Recipes</h1>
       <ul>
         {recipes.map((recipe, index) => (
@@ -12,7 +12,7 @@ const Content = () => {
           </li>
         ))}
       </ul> */}
-      </div>
+      </section>
   }
   
   export default Content

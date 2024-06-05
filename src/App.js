@@ -39,7 +39,11 @@ const App = () => {
   }
 
   return <div>
-    
+    <Search />
+    <section className="main-part">
+      <Category />
+      <Content />
+    </section>
     </div>
 }
 
