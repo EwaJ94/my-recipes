@@ -10,7 +10,16 @@
 
 .category {
     display: flex;
-    border: 0.3rem solid white;
+    flex-direction: column;
+    border: 0.2rem solid var(--border-color);
     height: 30rem;
     width: 20rem;
+    margin: 1rem 0 0 3rem;
+}
+
+h3 {
+    color: var(--main-text-color);
+    font-size: 1.5rem;
+    
+    padding-left: 2rem;
 }

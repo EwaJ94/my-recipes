@@ -4,12 +4,12 @@ import Search from "./components/Search"
 import { useState, useEffect } from "react"
 
 const App = () => {
-  const [recipes, setRecipes] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [recipes, setRecipes] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
-  const appId = "ae8e0993"; // Replace with your Edamam app ID
-  const appKey = "9f769dfec4f99a9746075132ba6e2422"; // Replace with your Edamam app key
+  const appId = "ae8e0993"
+  const appKey = "9f769dfec4f99a9746075132ba6e2422"
   
   useEffect(() => {
     const fetchData = async () => {
@@ -39,7 +39,7 @@ const App = () => {
   }
 
   return <div>
-    <Search />
+    <Search data={recipes}/>
     <section className="main-part">
       <Category />
       <Content />
