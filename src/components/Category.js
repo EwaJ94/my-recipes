@@ -1,9 +1,51 @@
 import "./Category.css"
+import { useState } from "react"
+import axios from "axios"
 
 const Category = () => {
+    const [recipes, setRecipes] = useState([])
+    const [dishType, setDishType] = useState("")
+
+    const appId = "ae8e0993"
+    const appKey = "9f769dfec4f99a9746075132ba6e2422"
+    
+    
+      const fetchData = async () => {
+        const url = 'https://api.edamam.com/api/recipes/v2'
+        const params = {
+          type: "public",
+          q: "",
+          app_id: appId,
+          app_key: appKey,
+          dishType: dishType
+        }
+  
+        try {
+          const response = await axios.get(url, {params})
+          setRecipes(response.data.hits)
+        } catch (error) {
+          console.error("Error fetching recipes:", error)
+        }
+      };
+  
+
   
     return <section className="category">
-        <h3>Category</h3>
+         <div>
+      <h2>Category</h2>
+      <button onClick={fetchData}>Search Recipes</button>
+      <div>
+      <ul>
+        {recipes.map((recipe, index) => (
+          <li key={index}>
+            <h2>{recipe.recipe.label}</h2>
+            <img src={recipe.recipe.image} alt={recipe.recipe.label} />
+            <p>{recipe.recipe.source}</p>
+          </li>
+        ))}
+      </ul> 
+      </div>
+      </div>
       </section>
   }
   
