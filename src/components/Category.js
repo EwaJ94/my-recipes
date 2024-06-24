@@ -33,7 +33,29 @@ const Category = () => {
     return <section className="category">
          <div>
       <h2>Category</h2>
-      <button onClick={fetchData}>Search Recipes</button>
+      <ul className="recipe-category">
+        <li>Alcohol-cocktail</li>
+        <li>Biscuits and cookies</li>
+        <li>Bread</li>
+        <li>Cereals</li>
+        <li>Condiments and sauces</li>
+        <li>Desserts</li>
+        <li>Drinks</li>
+        <li>Main course</li>
+        <li>Pancake</li>
+        <li>Preps</li>
+        <li>Preserves</li>
+        <li>Salad</li>
+        <li>Sandwiches</li>
+        <li>Side dish</li>
+        <li>Soup</li>
+        <li>Starter</li>
+
+        
+        
+
+      </ul>
+      {/* <button onClick={fetchData}>Search Recipes</button>
       <div>
       <ul>
         {recipes.map((recipe, index) => (
@@ -44,7 +66,7 @@ const Category = () => {
           </li>
         ))}
       </ul> 
-      </div>
+      </div> */}
       </div>
       </section>
   }
