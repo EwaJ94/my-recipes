@@ -16,7 +16,7 @@
     height: 42rem;
     width: 20rem;
     margin: 1rem 0 0 3rem;
-    box-shadow: 0 0 10px 0 var(--main-text-color) inset;
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0) inset;
 }
 
 h2 {

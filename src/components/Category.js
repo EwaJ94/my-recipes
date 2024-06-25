@@ -26,6 +26,7 @@ const Category = () => {
         } catch (error) {
           console.error("Error fetching recipes:", error)
         }
+
       };
   
 
@@ -50,10 +51,6 @@ const Category = () => {
         <li>Side dish</li>
         <li>Soup</li>
         <li>Starter</li>
-
-        
-        
-
       </ul>
       {/* <button onClick={fetchData}>Search Recipes</button>
       <div>

@@ -10,7 +10,8 @@
 
 .main-content {
     display: flex;
-    border: 0.3rem solid black;
-    height: 30rem;
-    width: 20rem;
+    height: 42rem;
+    width: 70rem;
+    margin: 1rem 0 0 9rem;
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0) inset;
 }
