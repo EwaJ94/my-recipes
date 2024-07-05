@@ -12,14 +12,14 @@ const App = () => {
   const appId = "ae8e0993"
   const appKey = "9f769dfec4f99a9746075132ba6e2422"
 
-    const fetchData = async () => {
+    const fetchData = async (category) => {
       const url = 'https://api.edamam.com/api/recipes/v2'
       const params = {
         type: "public",
-        q: dishType,
+        q: category,
         app_id: appId,
         app_key: appKey,
-        dishType: dishType
+        dishType: category
       }
 
       try {
@@ -42,7 +42,7 @@ const App = () => {
     <Search />
     <section className="main-part">
       <Category onCategoryClick={handleCategoryClick} />
-      <Content />
+      <Content recipes={recipes} dishType = {dishType}/>
     </section>
     </div>
 }

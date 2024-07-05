@@ -1,21 +1,29 @@
 import "./Content.css"
-// import { useState } from "react"
 
+const Content = ({recipes, dishType}) => {
+  return (
+    <section className="recipes-section">
+      {recipes.length > 0 && (
+        <div>
 
-const Content = () => {
-  // const [recipes, setRecipes] = useState([])
-  //   return <section className="main-content">
-  //      {recipes.map((recipe, index) => (
-  //                 <li key={index}>
-  //                   <h3>{recipe.recipe.label}</h3>
-  //                   <img src={recipe.recipe.image} alt={recipe.recipe.label} />
-  //                   <p>{recipe.recipe.source}</p>
-  //                   <a href={recipe.recipe.url} target="_blank" rel="noopener noreferrer">
-  //                     View Recipe
-  //                   </a>
-  //                 </li>
-  //               ))}
-      // </section>
-  }
+          <h3 className="dish-type">{dishType}</h3>
+          <ul className="list-of-recipes">
+            {recipes.map((recipe, index) => (
+              <li key={index}>
+                <h3 className="recipe-title">{recipe.recipe.label}</h3>
+                <img src={recipe.recipe.image} alt={recipe.recipe.label} className="recipe-image"/>
+                <p className="recipe-author">{recipe.recipe.source}</p>
+                <a href={recipe.recipe.url} target="_blank" rel="noopener noreferrer" className="recipe-url">
+                  View Recipe
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </section>
+  );
+};
+
   
   export default Content
