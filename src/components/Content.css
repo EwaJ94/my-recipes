@@ -9,9 +9,59 @@
 }
 
 .main-content {
-    display: flex;
     height: 42rem;
-    width: 70rem;
-    margin: 1rem 0 0 9rem;
+    width: 74rem;
+    margin: 1rem 0 0 5rem;
     box-shadow: 0 0 10px 0 rgb(0, 0, 0) inset;
+    overflow-y: scroll;
+}
+
+.recipes-section {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+}
+
+.dish-type {
+    text-align: center;
+    font-family: var(--main-font);
+    color: var(--main-text-color);
+    font-size: 1.5rem;
+    text-decoration: underline;
+    padding: 0.5rem 2rem;
+}
+
+.list-of-recipes {
+    
+}
+
+.one-recipe {
+    list-style-type: none;
+    font-family: var(--main-font);
+    color: var(--text-color);
+}
+
+.one-recipe h3 {
+   
+}
+
+.one-recipe img {
+    width: 15rem;
+}
+
+.author-and-url {
+    display: flex;
+    align-items: center;
+}
+.one-recipe p {
+    margin-right: 1rem;
+    
+}
+
+.one-recipe a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-style: italic;
+    color: var(--next-color);
+    font-size: larger;
 }
