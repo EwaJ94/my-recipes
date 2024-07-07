@@ -46,7 +46,7 @@ form {
     
 }
 
-.find-button {
+.search-button {
     width: 5rem;
     height: 2.5rem;
     border: none;
@@ -59,11 +59,11 @@ form {
     cursor: pointer;
 }
 
-.find-button:hover {
+.search-button:hover {
     color: var(--other-color);
     background-color: var(--main-text-color);
 }
 
-.find-button:active {
+.search-button:active {
     transform: scale(0.9);
 }
