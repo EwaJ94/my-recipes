@@ -26,41 +26,44 @@ const App = () => {
 
       try {
         const response = await axios.get(url, {params})
-        setRecipes(response.data.hits)
-        setFilteredRecipes(response.data.hits)
+        const fetchedRecipes = response.data.hits || []
+        setRecipes(fetchedRecipes)
+        setFilteredRecipes(fetchedRecipes)
       } catch (error) {
         console.error("Error fetching recipes:", error)
+        setRecipes([])
+        setFilteredRecipes([])
       }
 
     };
     
     const handleCategoryClick = (category) => {
       setDishType(category)
+      setSearchedWord("")
       fetchData(category)
-      console.log(category);
     }
 
     const handleSearch = (word) => {
       setSearchedWord(word)
-      filterRecipes(word)
+      getFilteredRecipes(word, recipes)
     }
 
-    const filterRecipes = (word) => {
+    const getFilteredRecipes = (word, recipesToFilter) => {
       if (!word) {
-        setFilteredRecipes(recipes)
+        setFilteredRecipes(recipesToFilter)
       } else {
-        const filtered = recipes.filter(recipe => 
-          recipes.recipe.label.toLowerCase().include(word.toLowerCase())
+        const filtered = recipesToFilter.filter(recipe => 
+          recipe?.recipe?.label?.toLowerCase().includes(word.toLowerCase())
         )
         setFilteredRecipes(filtered)
       }
     }
 
   return <div>
-    <Search onChange={handleSearch}/>
+    <Search onSearch={handleSearch}/>
     <section className="main-part">
       <Category onCategoryClick={handleCategoryClick} />
-      <Content recipes={recipes} dishType = {dishType}/>
+      <Content recipes={recipes} dishType={dishType} filterRecipes={filteredRecipes}/>
     </section>
     </div>
 }

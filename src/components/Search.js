@@ -10,6 +10,7 @@ const Search = ({onSearch}) => {
   const handleInputChange = (e) => {
     setSearchedWord(e.target.value)
   }
+  
   const formSubmit = (e) => {
     e.preventDefault()
     

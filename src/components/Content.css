@@ -13,6 +13,7 @@
     width: 74rem;
     margin: 1rem 0 0 5rem;
     box-shadow: 0 0 10px 0 rgb(0, 0, 0) inset;
+    border-radius: 1rem;
     overflow-y: scroll;
 }
 
@@ -54,15 +55,16 @@
 
 .one-recipe img {
     width: 15rem;
+    border-radius: 1rem;
 }
 
 .author-and-url {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    
 }
+
+
 .one-recipe p {
     margin-right: 1rem;
     
@@ -75,4 +77,8 @@
     color: var(--next-color);
     font-size: larger;
     font-weight: 600;
+}
+
+.one-recipe a:hover {
+    transform: scale(1.1);
 }
