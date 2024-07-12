@@ -1,5 +1,6 @@
 import Category from "./components/Category"
-import Content from "./components/Content"
+// import Content from "./components/Content"
+import OneRecipe from "./components/OneRecipe"
 import Search from "./components/Search"
 import { useState } from "react"
 import axios from "axios"
@@ -46,6 +47,7 @@ const App = () => {
     const handleSearch = (word) => {
       setSearchedWord(word)
       getFilteredRecipes(word, recipes)
+      console.log(word);
     }
 
     const getFilteredRecipes = (word, recipesToFilter) => {
@@ -63,7 +65,7 @@ const App = () => {
     <Search onSearch={handleSearch}/>
     <section className="main-part">
       <Category onCategoryClick={handleCategoryClick} />
-      <Content recipes={recipes} dishType={dishType} filterRecipes={filteredRecipes}/>
+      <OneRecipe recipes={recipes} dishType={dishType} filterRecipes={filteredRecipes}/>
     </section>
     </div>
 }

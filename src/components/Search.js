@@ -24,7 +24,7 @@ const Search = ({onSearch}) => {
   return <section className="search-field">
       <img src={food} className="icon" alt="fork and knife" />
       <form>
-        <input onChange={handleInputChange} value= {searchedWord} type="text" name="search-recipe" className="search-recipe" />
+        <input onChange={handleInputChange} value={searchedWord} type="text" name="search-recipe" className="search-recipe" />
         <input onClick={formSubmit} type="submit" value="Search" className="search-button" />
       </form>
     </section>
