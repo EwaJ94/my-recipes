@@ -1,12 +1,12 @@
 import "./Content.css"
 
 const Content = ({recipes, dishType}) => {
-  return (
-    <section className="main-content">
+  return <section className="main-content">
       {recipes.length > 0 && (
+        
         <div className="recipes-section">
 
-          <h3 className="dish-type">{dishType}</h3>
+          {/* <h3 className="dish-type">{dishType}</h3> */}
           <ul className="list-of-recipes">
             {recipes.map((recipe, index) => (
               <li key={index} className="one-recipe">
@@ -25,10 +25,13 @@ const Content = ({recipes, dishType}) => {
           </ul>
 
         </div>
+        
       )}
+      
     </section>
-  );
-};
-
+ 
   
-  export default Content
+}
+
+
+export default Content

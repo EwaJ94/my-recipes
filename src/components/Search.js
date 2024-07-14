@@ -9,13 +9,14 @@ const Search = ({onSearch}) => {
 
   const handleInputChange = (e) => {
     setSearchedWord(e.target.value)
+    
   }
   
   const formSubmit = (e) => {
     e.preventDefault()
     
     console.log(searchedWord);
-    onSearch(setSearchedWord)
+    onSearch(searchedWord)
     setSearchedWord("")
   }
 
@@ -23,9 +24,9 @@ const Search = ({onSearch}) => {
 
   return <section className="search-field">
       <img src={food} className="icon" alt="fork and knife" />
-      <form>
+      <form onSubmit={formSubmit}>
         <input onChange={handleInputChange} value={searchedWord} type="text" name="search-recipe" className="search-recipe" />
-        <input onClick={formSubmit} type="submit" value="Search" className="search-button" />
+        <input type="submit" value="Search" className="search-button" />
       </form>
     </section>
 }

@@ -8,19 +8,19 @@
     --main-font:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+
+
 .main-content {
     height: 42rem;
     width: 74rem;
     margin: 1rem 0 0 5rem;
-    box-shadow: 0 0 10px 0 rgb(0, 0, 0) inset;
-    border-radius: 1rem;
-    overflow-y: scroll;
+    overflow-y: auto;
+    
 }
 
 .recipes-section {
     display: flex;
     flex-direction: column;
-    /* margin-left: 2rem; */
 
 }
 
@@ -40,18 +40,25 @@
     
 }
 
-.one-recipe {
-    width: 50%;
+.one-recipe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25rem;
+    width: 40%;
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0) inset;
+    border-radius: 1rem;
     list-style-type: none;
     text-align: center;
     font-family: var(--main-font);
     color: var(--text-color);
-    margin-bottom: 2rem;
+    margin: 0 2rem 2rem;
 }
 
-/* .one-recipe h3 {
-    
-} */
+.one-recipe h3 {
+    padding: 0 1rem;
+}
 
 .one-recipe img {
     width: 15rem;

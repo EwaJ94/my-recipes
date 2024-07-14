@@ -1,8 +1,7 @@
 import Category from "./components/Category"
-// import Content from "./components/Content"
-import OneRecipe from "./components/OneRecipe"
+import Content from "./components/Content"
 import Search from "./components/Search"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
 
 
@@ -25,9 +24,15 @@ const App = () => {
         dishType: category
       }
 
+
+    console.log("Fetching data for category:", category);
+    console.log("API URL:", url);
+    console.log("API Params:", params);
+
       try {
         const response = await axios.get(url, {params})
         const fetchedRecipes = response.data.hits || []
+        console.log("Fetched recipes:", fetchedRecipes);
         setRecipes(fetchedRecipes)
         setFilteredRecipes(fetchedRecipes)
       } catch (error) {
@@ -39,33 +44,46 @@ const App = () => {
     };
     
     const handleCategoryClick = (category) => {
+      console.log("Category clicked:", category);
       setDishType(category)
       setSearchedWord("")
       fetchData(category)
     }
 
-    const handleSearch = (word) => {
-      setSearchedWord(word)
-      getFilteredRecipes(word, recipes)
-      console.log(word);
+    const handleSearch = (searchedWord) => {
+      console.log("Search term:", searchedWord)
+      setSearchedWord(searchedWord)
+      // getFilteredRecipes(searchedWord, recipes)
+      
     }
 
-    const getFilteredRecipes = (word, recipesToFilter) => {
-      if (!word) {
-        setFilteredRecipes(recipesToFilter)
+    const getFilteredRecipes = (searchedWord, recipesToFilter) => {
+      if (!searchedWord) {
+        setFilteredRecipes(recipesToFilter);
+        console.log(recipesToFilter);
       } else {
         const filtered = recipesToFilter.filter(recipe => 
-          recipe?.recipe?.label?.toLowerCase().includes(word.toLowerCase())
-        )
-        setFilteredRecipes(filtered)
+          recipe?.recipe?.label?.toLowerCase().includes(searchedWord.toLowerCase())
+        );
+        console.log("Filtered recipes:", filtered)
+        setFilteredRecipes(filtered);
+        
       }
-    }
+    };
+  
+    useEffect(() => {
+      getFilteredRecipes(searchedWord, recipes);
+    }, [searchedWord, recipes]);
+
+    useEffect(() => {
+      fetchData();
+    }, []);
 
   return <div>
     <Search onSearch={handleSearch}/>
     <section className="main-part">
       <Category onCategoryClick={handleCategoryClick} />
-      <OneRecipe recipes={recipes} dishType={dishType} filterRecipes={filteredRecipes}/>
+      <Content recipes={recipes} dishType={dishType} filterRecipes={filteredRecipes}/>
     </section>
     </div>
 }
