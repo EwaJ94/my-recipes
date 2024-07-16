@@ -1,12 +1,10 @@
 import "./Content.css"
 
-const Content = ({recipes, dishType}) => {
+const Content = ({recipes}) => {
   return <section className="main-content">
       {recipes.length > 0 && (
         
         <div className="recipes-section">
-
-          {/* <h3 className="dish-type">{dishType}</h3> */}
           <ul className="list-of-recipes">
             {recipes.map((recipe, index) => (
               <li key={index} className="one-recipe">

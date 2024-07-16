@@ -14,18 +14,20 @@ const App = () => {
   const appId = "ae8e0993"
   const appKey = "9f769dfec4f99a9746075132ba6e2422"
 
-    const fetchData = async (category) => {
+    const fetchData = async (query, type="category") => {
       const url = 'https://api.edamam.com/api/recipes/v2'
       const params = {
         type: "public",
-        q: category,
+        q: query,
         app_id: appId,
         app_key: appKey,
-        dishType: category
       }
 
+      if (type === "category") {
+        params.dishType = query
+      }
 
-    console.log("Fetching data for category:", category);
+    console.log("Fetching data for category:", query);
     console.log("API URL:", url);
     console.log("API Params:", params);
 
@@ -47,24 +49,27 @@ const App = () => {
       console.log("Category clicked:", category);
       setDishType(category)
       setSearchedWord("")
-      fetchData(category)
+      fetchData(category, "category")
     }
 
     const handleSearch = (searchedWord) => {
       console.log("Search term:", searchedWord)
       setSearchedWord(searchedWord)
-      // getFilteredRecipes(searchedWord, recipes)
-      
+      fetchData(searchedWord, "search")
     }
 
     const getFilteredRecipes = (searchedWord, recipesToFilter) => {
+      console.log(filteredRecipes);
+      console.log(searchedWord);
+      console.log(recipesToFilter);
       if (!searchedWord) {
         setFilteredRecipes(recipesToFilter);
-        console.log(recipesToFilter);
+        console.log("No recipes found.");
       } else {
         const filtered = recipesToFilter.filter(recipe => 
           recipe?.recipe?.label?.toLowerCase().includes(searchedWord.toLowerCase())
         );
+        
         console.log("Filtered recipes:", filtered)
         setFilteredRecipes(filtered);
         
@@ -73,17 +78,15 @@ const App = () => {
   
     useEffect(() => {
       getFilteredRecipes(searchedWord, recipes);
+
     }, [searchedWord, recipes]);
 
-    useEffect(() => {
-      fetchData();
-    }, []);
 
   return <div>
     <Search onSearch={handleSearch}/>
     <section className="main-part">
       <Category onCategoryClick={handleCategoryClick} />
-      <Content recipes={recipes} dishType={dishType} filterRecipes={filteredRecipes}/>
+      <Content recipes={filteredRecipes} />
     </section>
     </div>
 }
