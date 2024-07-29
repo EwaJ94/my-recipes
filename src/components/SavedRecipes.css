@@ -1,0 +1,17 @@
+:root {
+    --main-bg-color: #012611;
+    --main-text-color: #69A660;
+    --text-color: #B0BFB4;
+    --border-color: #000D09;
+    --other-color: #014017;
+    --next-color: #247329;
+    --main-font:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.heart-icon {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    margin: 3rem 3rem 3rem 1rem;
+    cursor: pointer;
+}

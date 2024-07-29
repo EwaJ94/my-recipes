@@ -1,6 +1,7 @@
+import Search from "./components/Search"
+import SavedRecipes from "./components/SavedRecipes"
 import Category from "./components/Category"
 import Content from "./components/Content"
-import Search from "./components/Search"
 import { useEffect, useState } from "react"
 import axios from "axios"
 
@@ -83,7 +84,10 @@ const App = () => {
 
 
   return <div>
-    <Search onSearch={handleSearch}/>
+    <section className="search-part">
+        <Search onSearch={handleSearch}/>
+        <SavedRecipes />
+    </section>
     <section className="main-part">
       <Category onCategoryClick={handleCategoryClick} />
       <Content recipes={filteredRecipes} />

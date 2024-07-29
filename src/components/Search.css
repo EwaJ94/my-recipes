@@ -30,7 +30,7 @@ form {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin: 2rem 5rem;
+    margin-top: 2rem;
     height: 5rem;
 }
 
