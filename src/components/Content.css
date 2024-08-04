@@ -10,13 +10,13 @@
 
 
 
-.main-content {
+/* .main-content {
     height: 42rem;
     width: 74rem;
     margin: 1rem 0 0 5rem;
     overflow-y: auto;
     
-}
+} */
 
 .recipes-section {
     display: flex;

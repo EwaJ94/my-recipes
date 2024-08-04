@@ -1,21 +1,21 @@
 import "./Search.css"
-import food from "../img/food.ico"
 import { useState } from "react"
 
 
-const Search = ({onSearch}) => {
+const Search = ({onSearch, changeIconStyle}) => {
   const [searchedWord, setSearchedWord] = useState ("")
-  
+
 
   const handleInputChange = (e) => {
     setSearchedWord(e.target.value)
+    
     
   }
   
   const formSubmit = (e) => {
     e.preventDefault()
     
-    console.log(searchedWord);
+    changeIconStyle()
     onSearch(searchedWord)
     setSearchedWord("")
   }
@@ -23,8 +23,8 @@ const Search = ({onSearch}) => {
  
 
   return <section className="search-field">
-      <img src={food} className="icon" alt="fork and knife" />
-      <form onSubmit={formSubmit}>
+      
+      <form  onSubmit={formSubmit} >
         <input onChange={handleInputChange} value={searchedWord} type="text" name="search-recipe" className="search-recipe" />
         <input type="submit" value="Search" className="search-button" />
       </form>

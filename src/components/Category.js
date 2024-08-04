@@ -1,6 +1,8 @@
 import "./Category.css"
 
-const Category = ({onCategoryClick}) => {
+
+
+const Category = ({onCategoryClick, changeIconStyle}) => {
 
   const categories = [
     'Alcohol-cocktail',
@@ -25,7 +27,7 @@ const Category = ({onCategoryClick}) => {
       <h2>Category</h2>
       <ul className="recipe-category">
       {categories.map((category, index) => (
-        <li key={index} onClick={()=>onCategoryClick(category)}>{category}</li>
+        <li key={index} onClick={()=>{onCategoryClick(category);changeIconStyle()}}>{category} </li>
       ))}
       </ul>
       </section>
