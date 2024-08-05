@@ -14,8 +14,8 @@ const App = () => {
   const [searchedWord, setSearchedWord] = useState("")
   const [iconStyle, setIconStyle] = useState({
     position: "absolute",
-    right: "44rem",
-    top: "25rem",
+    right: "40rem",
+    top: "20rem",
     height: "15rem",
     opacity: "0.2",
   })
@@ -28,8 +28,8 @@ const App = () => {
       height: "5rem",
       opacity: "0.5",
     })
-  }
-  
+  } 
+
 
   const appId = "ae8e0993"
   const appKey = "9f769dfec4f99a9746075132ba6e2422"
@@ -99,11 +99,11 @@ const App = () => {
   return <div>
     <img src={food} style={iconStyle} className="icon" alt="fork and knife" />
     <section className="search-part">
-        <Search onSearch={handleSearch} changeIconStyle={changeIconStyle}/>
-        <SavedRecipes />
+      <Search onSearch={handleSearch} changeIconStyle={changeIconStyle} />
+      <SavedRecipes />
     </section>
     <section className="main-part">
-      <Category onCategoryClick={handleCategoryClick} changeIconStyle={changeIconStyle} />
+      <Category onCategoryClick={handleCategoryClick} changeIconStyle={changeIconStyle}/>
       <Content recipes={filteredRecipes} />
     </section>
     </div>

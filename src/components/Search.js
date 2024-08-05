@@ -5,7 +5,6 @@ import { useState } from "react"
 const Search = ({onSearch, changeIconStyle}) => {
   const [searchedWord, setSearchedWord] = useState ("")
 
-
   const handleInputChange = (e) => {
     setSearchedWord(e.target.value)
     
@@ -23,7 +22,6 @@ const Search = ({onSearch, changeIconStyle}) => {
  
 
   return <section className="search-field">
-      
       <form  onSubmit={formSubmit} >
         <input onChange={handleInputChange} value={searchedWord} type="text" name="search-recipe" className="search-recipe" />
         <input type="submit" value="Search" className="search-button" />
