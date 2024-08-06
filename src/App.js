@@ -12,6 +12,10 @@ const App = () => {
   const [filteredRecipes, setFilteredRecipes] = useState ([])
   const [dishType, setDishType] = useState("")
   const [searchedWord, setSearchedWord] = useState("")
+  const [savedRecipe, setSavedRecipe] = useState("")
+  const [listOfRacipes, setListOfRecipes] = useState([])
+
+
   const [iconStyle, setIconStyle] = useState({
     position: "absolute",
     right: "40rem",
@@ -96,15 +100,25 @@ const App = () => {
     }, [searchedWord, recipes]);
 
 
+    const saveOneRecipe = (recipes) => {
+      setSavedRecipe(recipes)
+      console.log(savedRecipe);
+      
+    }
+
+    const listOfSavedRecipes = () => {
+      setListOfRecipes(saveOneRecipe)
+    }
+
   return <div>
     <img src={food} style={iconStyle} className="icon" alt="fork and knife" />
     <section className="search-part">
       <Search onSearch={handleSearch} changeIconStyle={changeIconStyle} />
-      <SavedRecipes />
+      <SavedRecipes listOfSavedRecipes={listOfSavedRecipes}/>
     </section>
     <section className="main-part">
       <Category onCategoryClick={handleCategoryClick} changeIconStyle={changeIconStyle}/>
-      <Content recipes={filteredRecipes} />
+      <Content recipes={filteredRecipes} saveOneRecipe={saveOneRecipe} />
     </section>
     </div>
 }

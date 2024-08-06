@@ -57,10 +57,21 @@
     margin: 0 2rem 2rem;
 }
 
+.save-recipe {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var(--text-color);
+    font-size: 2rem;
+    cursor: pointer;
+}
 
+.save-recipe:active{
+    color: aqua;
+}
 
 .one-recipe h3 {
-    margin: 2.5rem 2.5rem 1.5rem;
+    margin: 1rem 2.5rem;
 }
 
 .one-recipe img {
