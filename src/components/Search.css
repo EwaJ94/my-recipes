@@ -1,19 +1,13 @@
 :root {
-    --main-bg-color: #f2f9f4;
     --main-text-color: #000c05;
     --text-color: #69A660;
-    --border-color: #798783;
-    --other-color: #69A660;
-    --next-color: #247329;
+    --button-color: #69A660;
 }
 
 [data-theme="dark"] {
-    --main-bg-color: #012611;
     --main-text-color: #69A660;
     --text-color: #B0BFB4;
-    --border-color: #000D09;
-    --other-color: #014017;
-    --next-color: #247329;
+    --button-color: #014017;
 }
 
 .search-field {
@@ -37,8 +31,9 @@ form {
     padding: 0.5rem 1rem;
     margin-right: 1rem;
     font-size: 1rem;
+    color: var(--main-text-color);
     outline: none;
-    
+    box-shadow: 0 0 0.3rem 0 #798783 inset;
 }
 
 .search-button {
@@ -50,12 +45,13 @@ form {
     font-weight:600;
     outline: none;
     color: var(--main-text-color);
-    background-color: var(--other-color);
+    background-color: var(--button-color);
     cursor: pointer;
+    box-shadow: 0 0 0.3rem 0 #798783 inset;
 }
 
 .search-button:hover {
-    color: var(--other-color);
+    color: var(--button-color);
     background-color: var(--main-text-color);
 }
 

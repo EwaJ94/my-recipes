@@ -1,18 +1,12 @@
 :root {
-    --main-bg-color: #f2f9f4;
     --main-text-color: #000c05;
     --text-color: #69A660;
-    --border-color: #798783;
-    --other-color: #69A660;
-    --next-color: #247329;
+    --other-color: #247329;
 }
 
 [data-theme="dark"] {
-    --main-bg-color: #012611;
     --main-text-color: #69A660;
     --text-color: #B0BFB4;
-    --border-color: #000D09;
-    --other-color: #014017;
     --next-color: #247329;
 }
 
@@ -54,7 +48,7 @@
     align-items: center;
     height: 25rem;
     width: 40%;
-    box-shadow: 0 0 10px 0 rgb(0, 0, 0) inset;
+    box-shadow: 0 0 0.5rem 0 #798783 inset;
     border-radius: 1rem;
     list-style-type: none;
     text-align: center;
@@ -103,7 +97,7 @@
     color: var(--text-color);
     text-decoration: none;
     font-style: italic;
-    color: var(--next-color);
+    color: var(--other-color);
     font-size: larger;
     font-weight: 600;
 }

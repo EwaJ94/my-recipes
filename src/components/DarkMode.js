@@ -1,5 +1,6 @@
 import "./DarkMode.css"
-import Theme from "../img/Theme.png"
+import Sun from "../img/Sun.png"
+import Moon from "../img/Moon.png"
 
 const DarkMode = () => {
 
@@ -16,8 +17,9 @@ const DarkMode = () => {
         <input type="checkbox" onChange={themeMode} />
         
 
-      <span className="slider">
-      <img src={Theme} className="theme" alt="sun and moon" />
+        <span className="slider">
+        <img src={Sun} className="sun" alt="sun" />
+        <img src={Moon} className="moon" alt="moon" />
       </span>
     </label>
     </div>
