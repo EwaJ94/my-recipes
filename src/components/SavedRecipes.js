@@ -29,16 +29,17 @@ const SavedRecipes = ({listOfSavedRecipes}) => {
                 </a>
              
                 </div>
-
+              
               </li>
             ))}
           </ul>
 
         </div>
-        
+      
       )}
       
     </section>
+    
     </div>
 }
 

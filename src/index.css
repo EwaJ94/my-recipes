@@ -1,12 +1,21 @@
 :root {
+    --main-bg-color: #f2f9f4;
+    --main-text-color: #000c05;
+    --text-color: #69A660;
+    --border-color: #798783;
+    --other-color: #69A660;
+    --next-color: #247329;
+}
+
+[data-theme="dark"] {
     --main-bg-color: #012611;
     --main-text-color: #69A660;
     --text-color: #B0BFB4;
     --border-color: #000D09;
     --other-color: #014017;
     --next-color: #247329;
-    --main-font:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
 
 body {
     margin: 0;

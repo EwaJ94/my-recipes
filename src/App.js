@@ -2,6 +2,7 @@ import Search from "./components/Search"
 import SavedRecipes from "./components/SavedRecipes"
 import Category from "./components/Category"
 import Content from "./components/Content"
+import DarkMode from "./components/DarkMode"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import food from "./img/food.ico"
@@ -115,6 +116,7 @@ const App = () => {
     <section className="search-part">
       <Search onSearch={handleSearch} changeIconStyle={changeIconStyle} />
       <SavedRecipes listOfSavedRecipes={listOfSavedRecipes}/>
+      <DarkMode />
     </section>
     <section className="main-part">
       <Category onCategoryClick={handleCategoryClick} changeIconStyle={changeIconStyle}/>
