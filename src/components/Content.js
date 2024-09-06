@@ -1,9 +1,19 @@
 import "./Content.css"
 import { CiHeart } from "react-icons/ci"
 
-const Content = ({recipes, saveOneRecipe}) => {
+
+const Content = ({recipes, saveOneRecipe, wasSearched}) => {
+  
+
+ 
+
   return <section className="main-content">
-      {recipes.length > 0 && (
+    {wasSearched && recipes.length === 0 ? (
+        <div className="no-recipes">
+          <p>No recipes found, try it again.</p>
+        </div>
+      ): (
+      
         
         <div className="recipes-section">
           <ul className="list-of-recipes">
@@ -21,7 +31,6 @@ const Content = ({recipes, saveOneRecipe}) => {
                 </a>
              
                 </div>
-
               </li>
             ))}
           </ul>

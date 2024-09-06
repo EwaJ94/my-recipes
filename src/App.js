@@ -15,6 +15,7 @@ const App = () => {
   const [searchedWord, setSearchedWord] = useState("")
   const [savedRecipe, setSavedRecipe] = useState("")
   const [listOfRacipes, setListOfRecipes] = useState([])
+  const [wasSearched, setWasSearched] = useState(false)
 
 
   const [iconStyle, setIconStyle] = useState({
@@ -66,16 +67,21 @@ const App = () => {
       }
 
     };
+
+    const handleSearchOrCategoryClick = () => {
+      setWasSearched(true)
+    }
     
     const handleCategoryClick = (category) => {
-
+      
+      handleSearchOrCategoryClick()
       setDishType(category)
       setSearchedWord("")
       fetchData(category, "category")
     }
 
     const handleSearch = (searchedWord) => {
-
+      handleSearchOrCategoryClick()
       setSearchedWord(searchedWord)
       fetchData(searchedWord, "search")
     }
@@ -83,8 +89,8 @@ const App = () => {
     const getFilteredRecipes = (searchedWord, recipesToFilter) => {
       
       if (!searchedWord) {
-        setFilteredRecipes(recipesToFilter);
-        console.log("No recipes found.");
+        setFilteredRecipes(filteredRecipes);
+
       } else {
         const filtered = recipesToFilter.filter(recipe => 
           recipe?.recipe?.label?.toLowerCase().includes(searchedWord.toLowerCase())
@@ -100,6 +106,7 @@ const App = () => {
 
     }, [searchedWord, recipes]);
 
+    
 
     const saveOneRecipe = (recipes) => {
       setSavedRecipe(recipes)
@@ -120,7 +127,7 @@ const App = () => {
     </section>
     <section className="main-part">
       <Category onCategoryClick={handleCategoryClick} changeIconStyle={changeIconStyle}/>
-      <Content recipes={filteredRecipes} saveOneRecipe={saveOneRecipe} />
+      <Content recipes={filteredRecipes} saveOneRecipe={saveOneRecipe} wasSearched={wasSearched}/>
     </section>
     </div>
 }
