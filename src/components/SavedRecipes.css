@@ -14,3 +14,100 @@
     margin: 3rem 1rem;
     cursor: pointer;
 }
+
+.main-content {
+    height: 42rem;
+    width: 74rem;
+    margin: 1rem 0 0 5rem;
+    overflow-y: auto;
+    
+}
+
+.no-recipes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    height: 15rem;
+    color: var(--main-text-color);
+    
+}
+
+.recipes-section {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.list-of-recipes {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    
+}
+
+.one-recipe {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25rem;
+    width: 40%;
+    box-shadow: 0 0 0.5rem 0 #798783 inset;
+    border-radius: 1rem;
+    list-style-type: none;
+    text-align: center;
+    color: var(--text-color);
+    margin: 0 2rem 2rem;
+}
+
+.save-recipe {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var(--text-color);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.save-recipe:active{
+    color: aqua;
+}
+
+.one-recipe h3 {
+    margin: 1rem 2.5rem;
+}
+
+.one-recipe img {
+    width: 15rem;
+    border-radius: 1rem;
+}
+
+.author-and-url {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.one-recipe p {
+    margin-right: 1rem;
+    
+}
+
+.one-recipe a {
+    
+    color: var(--text-color);
+    text-decoration: none;
+    font-style: italic;
+    color: var(--other-color);
+    font-size: larger;
+    font-weight: 600;
+}
+
+.one-recipe a:hover {
+    transform: scale(1.1);
+}

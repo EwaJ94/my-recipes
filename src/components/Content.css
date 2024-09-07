@@ -26,21 +26,13 @@
     font-size: 1.5rem;
     height: 15rem;
     color: var(--main-text-color);
-    
+
 }
 
 .recipes-section {
     display: flex;
     flex-direction: column;
 
-}
-
-.dish-type {
-    text-align: center;
-    color: var(--main-text-color);
-    font-size: 1.5rem;
-    text-decoration: underline;
-    
 }
 
 .list-of-recipes {

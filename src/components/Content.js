@@ -3,9 +3,6 @@ import { CiHeart } from "react-icons/ci"
 
 
 const Content = ({recipes, saveOneRecipe, wasSearched}) => {
-  
-
- 
 
   return <section className="main-content">
     {wasSearched && recipes.length === 0 ? (
@@ -20,7 +17,7 @@ const Content = ({recipes, saveOneRecipe, wasSearched}) => {
             {recipes.map((recipe, index) => (
               <li key={index} className="one-recipe">
         
-                <CiHeart className="save-recipe" onClick={saveOneRecipe}/>
+                <CiHeart className="save-recipe" onClick={() => saveOneRecipe(recipe)}/>
                 <h3 className="recipe-title">{recipe.recipe.label}</h3>
                 <img src={recipe.recipe.image} alt={recipe.recipe.label} className="recipe-image"/>
 

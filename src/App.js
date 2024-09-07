@@ -8,16 +8,15 @@ import axios from "axios"
 import food from "./img/food.ico"
 
 
+
 const App = () => {
   const [recipes, setRecipes] = useState([])
   const [filteredRecipes, setFilteredRecipes] = useState ([])
   const [dishType, setDishType] = useState("")
   const [searchedWord, setSearchedWord] = useState("")
-  const [savedRecipe, setSavedRecipe] = useState("")
-  const [listOfRacipes, setListOfRecipes] = useState([])
+  const [listOfRecipes, setListOfRecipes] = useState([])
+  const [showSavedRecipes, setShowSavedRecipes] = useState(false)
   const [wasSearched, setWasSearched] = useState(false)
-
-
   const [iconStyle, setIconStyle] = useState({
     position: "absolute",
     right: "40rem",
@@ -108,21 +107,20 @@ const App = () => {
 
     
 
-    const saveOneRecipe = (recipes) => {
-      setSavedRecipe(recipes)
-      console.log(savedRecipe);
-      
+    const saveOneRecipe = (recipeToSave) => {
+      setListOfRecipes((prevRecipes) => [...prevRecipes, recipeToSave])
     }
 
-    const listOfSavedRecipes = () => {
-      setListOfRecipes(saveOneRecipe)
+    const toggleSavedRecipes = () => {
+      setShowSavedRecipes((prev) => !prev)
     }
 
   return <div>
     <img src={food} style={iconStyle} className="icon" alt="fork and knife" />
     <section className="search-part">
       <Search onSearch={handleSearch} changeIconStyle={changeIconStyle} />
-      <SavedRecipes listOfSavedRecipes={listOfSavedRecipes}/>
+      <SavedRecipes listOfRecipes={listOfRecipes} showSavedRecipes={showSavedRecipes} 
+      toggleSavedRecipes={toggleSavedRecipes}/>
       <DarkMode />
     </section>
     <section className="main-part">

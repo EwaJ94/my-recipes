@@ -22,7 +22,7 @@ const DarkMode = () => {
 
   return <div className="dark-mode">
       <label className="switch">
-        <input type="checkbox" onChange={themeMode}  />
+        <input type="checkbox" onChange={themeMode} />
         <span className="slider">
         <img src={Sun} className="sun" alt="sun" />
         <img src={Moon} className="moon" alt="moon" />
