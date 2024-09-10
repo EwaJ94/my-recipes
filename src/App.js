@@ -72,14 +72,16 @@ const App = () => {
     }
     
     const handleCategoryClick = (category) => {
-      
+      setShowSavedRecipes(false)
       handleSearchOrCategoryClick()
       setDishType(category)
       setSearchedWord("")
       fetchData(category, "category")
+
     }
 
     const handleSearch = (searchedWord) => {
+      setShowSavedRecipes(false)
       handleSearchOrCategoryClick()
       setSearchedWord(searchedWord)
       fetchData(searchedWord, "search")
@@ -113,19 +115,22 @@ const App = () => {
 
     const toggleSavedRecipes = () => {
       setShowSavedRecipes((prev) => !prev)
+      setFilteredRecipes([])
+      setWasSearched(false)
+      changeIconStyle()
     }
 
   return <div>
     <img src={food} style={iconStyle} className="icon" alt="fork and knife" />
     <section className="search-part">
       <Search onSearch={handleSearch} changeIconStyle={changeIconStyle} />
-      <SavedRecipes listOfRecipes={listOfRecipes} showSavedRecipes={showSavedRecipes} 
+      <SavedRecipes  
       toggleSavedRecipes={toggleSavedRecipes}/>
       <DarkMode />
     </section>
     <section className="main-part">
       <Category onCategoryClick={handleCategoryClick} changeIconStyle={changeIconStyle}/>
-      <Content recipes={filteredRecipes} saveOneRecipe={saveOneRecipe} wasSearched={wasSearched}/>
+      <Content recipes={filteredRecipes} saveOneRecipe={saveOneRecipe} wasSearched={wasSearched}listOfRecipes={listOfRecipes} showSavedRecipes={showSavedRecipes} toggleSavedRecipes={toggleSavedRecipes}/>
     </section>
     </div>
 }

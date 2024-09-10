@@ -67,8 +67,8 @@
     cursor: pointer;
 }
 
-.save-recipe:active{
-    color: aqua;
+.save-recipe:visited{
+    font-size: 5rem;;
 }
 
 .one-recipe h3 {
