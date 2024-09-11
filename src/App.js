@@ -110,14 +110,26 @@ const App = () => {
     
 
     const saveOneRecipe = (recipeToSave) => {
-      setListOfRecipes((prevRecipes) => [...prevRecipes, recipeToSave])
-    }
+      setListOfRecipes((prevRecipes) => {
+        const isRecipeSaved = prevRecipes.some((recipe) => recipe.recipe.uri === recipeToSave.recipe.uri)
+      
+      
+      if (isRecipeSaved) {
+        return prevRecipes.filter(
+          (recipe) => recipe.recipe.uri !== recipeToSave.recipe.uri
+        )
+      } else {
+        return [...prevRecipes, recipeToSave]
+      }
+    })}
+      
+      
 
     const toggleSavedRecipes = () => {
+      changeIconStyle()
+      setWasSearched(false)
       setShowSavedRecipes((prev) => !prev)
       setFilteredRecipes([])
-      setWasSearched(false)
-      changeIconStyle()
     }
 
   return <div>
