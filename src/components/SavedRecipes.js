@@ -1,12 +1,12 @@
 import "./SavedRecipes.css"
-import { CiHeart } from "react-icons/ci"
+import { FaHeart } from "react-icons/fa";
 
 
 const SavedRecipes = ({toggleSavedRecipes}) => {
 
 
   return <div>
-    <CiHeart className="heart-icon" onClick={toggleSavedRecipes}/>
+    <FaHeart className="heart-icon" onClick={toggleSavedRecipes}/>
    
     
     </div>
