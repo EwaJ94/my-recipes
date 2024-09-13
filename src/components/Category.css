@@ -13,6 +13,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    
     height: 42rem;
     width: 20rem;
     margin: 1rem 0 0 3rem;
@@ -42,4 +43,34 @@ h2 {
 
 .recipe-category li:hover {
     transform: scale(1.1);
+}
+
+@media screen and (max-width: 1500px) {
+    .category {
+        width: 15rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        padding-top: 1rem;
+    }
+
+    .recipe-category {
+        padding-top: 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .category {
+        width: 10rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+        padding-top: 1.5rem;
+    }
+
+    .recipe-category {
+        padding-top: 0;
+    }
 }

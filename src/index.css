@@ -30,9 +30,11 @@ body {
     width: 100vw;
     display: flex;
     justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 .main-part {
     display: flex;
-    
+    flex-wrap: wrap;
 }
+
