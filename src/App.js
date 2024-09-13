@@ -113,16 +113,26 @@ const App = () => {
       setListOfRecipes((prevRecipes) => {
         const isRecipeSaved = prevRecipes.some((recipe) => recipe.recipe.uri === recipeToSave.recipe.uri)
       
-      
+      let updatedRecipes
       if (isRecipeSaved) {
-        return prevRecipes.filter(
+        updatedRecipes = prevRecipes.filter(
           (recipe) => recipe.recipe.uri !== recipeToSave.recipe.uri
         )
       } else {
-        return [...prevRecipes, recipeToSave]
+        updatedRecipes = [...prevRecipes, recipeToSave]
       }
+
+      localStorage.setItem("savedRecipes", JSON.stringify(updatedRecipes))
+
+      return updatedRecipes
     })}
       
+    useEffect (() => {
+      const savedRecipesFromLS = localStorage.getItem("savedRecipes")
+      if (savedRecipesFromLS) {
+        setListOfRecipes(JSON.parse(savedRecipesFromLS))
+      }
+    }, [])
       
 
     const toggleSavedRecipes = () => {
