@@ -14,3 +14,10 @@
     margin: 3.5rem 1rem;
     cursor: pointer;
 }
+
+@media screen and (max-width: 800px) {
+    .heart-icon {
+        font-size: 1.7rem;
+        margin: 3.6rem 1rem;
+    }
+}

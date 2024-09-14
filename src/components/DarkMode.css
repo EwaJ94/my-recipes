@@ -64,3 +64,28 @@ input:checked + .slider:before {
     -ms-transform: translateX(1.5rem);
     transform: translateX(1.5rem);
 }
+
+@media screen and (max-width: 800px){
+    .switch {
+        height: 1.7rem;
+        width: 3.3rem;
+    }
+
+    .slider:before {
+        height: 1.3rem;
+        width: 1.3rem;
+        
+        bottom: 0.2rem;
+    }
+
+    .sun {
+        width: 1rem;
+    }
+    
+    .moon {
+        width: 1rem;
+
+    }
+    
+}
+
