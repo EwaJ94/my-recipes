@@ -25,6 +25,22 @@ body {
     background-color: var(--main-bg-color);
 }
 
+.icon-default {
+    position: absolute;
+    right: 40rem;
+    top: 20rem;
+    height: 15rem;
+    opacity: 0.2;
+}
+
+.icon-changed {
+    position: absolute;
+    left: 5rem;
+    top: 2rem;
+    height: 5rem;
+    opacity: 0.5;
+}
+
 .icon:hover {
     transform: rotateY(180deg);
     transition: 1.2s;

@@ -16,23 +16,7 @@ const App = () => {
   const [listOfRecipes, setListOfRecipes] = useState([])
   const [showSavedRecipes, setShowSavedRecipes] = useState(false)
   const [wasSearched, setWasSearched] = useState(false)
-  const [iconStyle, setIconStyle] = useState({
-    position: "absolute",
-    right: "40rem",
-    top: "20rem",
-    height: "15rem",
-    opacity: "0.2",
-  })
-
-  const changeIconStyle = () => {
-    setIconStyle({
-      position: "absolute",
-      left: "5rem",
-      top: "2rem",
-      height: "5rem",
-      opacity: "0.5",
-    })
-  } 
+  const [iconChanged, setIconChanged] = useState(false)
 
   const appId = process.env.REACT_APP_API_ID
   const appKey = process.env.REACT_APP_API_KEY
@@ -57,6 +41,7 @@ const App = () => {
 
         setRecipes(fetchedRecipes)
         setFilteredRecipes(fetchedRecipes)
+
     } catch (error) {
         console.error("Error fetching data:", error)
 
@@ -73,10 +58,15 @@ const App = () => {
 
       setRecipes([])
       setFilteredRecipes([])
+
       } finally {
         setLoading(false);  
       }
     };
+
+    const changeIconStyle = () => {
+      setIconChanged(true)
+    }
 
     const handleSearchOrCategoryClick = () => {
       setWasSearched(true)
@@ -149,7 +139,7 @@ const App = () => {
     }
 
   return <div>
-    <img src={food} style={iconStyle} className="icon" alt="fork and knife" />
+    <img src={food} className={iconChanged ? "icon-changed" : "icon-default"} alt="fork and knife" />
     <section className="search-part">
       <Search onSearch={handleSearch} 
       changeIconStyle={changeIconStyle} />

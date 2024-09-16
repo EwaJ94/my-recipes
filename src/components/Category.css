@@ -73,3 +73,30 @@ h2 {
         padding-top: 0;
     }
 }
+
+@media screen and (max-width: 1000px) { 
+    .category {
+        width: 8rem;
+        height: 45rem;
+    }
+
+    h2 {
+        padding: 0;
+    }
+
+    .recipe-category{
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 425px) { 
+    .category {
+        width: 7rem;
+        height: 40rem;
+        margin: 1rem 0 0 1rem;
+    }
+
+    .recipe-category {
+        font-size: 0.8rem
+    }
+}
