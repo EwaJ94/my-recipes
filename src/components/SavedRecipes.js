@@ -4,13 +4,7 @@ import { FaHeart } from "react-icons/fa";
 
 const SavedRecipes = ({toggleSavedRecipes}) => {
 
-
-  return <div>
-    <FaHeart className="heart-icon" onClick={toggleSavedRecipes}/>
-   
-    
-    </div>
-  
+  return <FaHeart className="heart-icon" onClick={toggleSavedRecipes}/>
 }
 
 export default SavedRecipes

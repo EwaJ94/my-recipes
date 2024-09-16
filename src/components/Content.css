@@ -7,7 +7,7 @@
 [data-theme="dark"] {
     --main-text-color: #69A660;
     --text-color: #B0BFB4;
-    --next-color: #247329;
+    --other-color: #247329;
 }
 
 .main-content {
@@ -15,7 +15,6 @@
     width: 74rem;
     margin: 1rem 0 0 5rem;
     overflow-y: auto;
-    
 }
 
 .no-recipes {
@@ -26,13 +25,11 @@
     font-size: 1.5rem;
     height: 15rem;
     color: var(--main-text-color);
-
 }
 
 .recipes-section {
     display: flex;
     flex-direction: column;
-
 }
 
 .list-of-recipes {
@@ -40,7 +37,6 @@
     justify-content: center;
     flex-wrap: wrap;
     padding: 0;
-    
 }
 
 .one-recipe {
@@ -78,16 +74,13 @@
 }
 
 .author-and-url {
-
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-
 .one-recipe p {
     margin-right: 1rem;
-    
 }
 
 .one-recipe a {
@@ -105,34 +98,30 @@
 
 @media screen and (max-width: 1670px) {
     .main-content {
-    width: 65rem;
-  
+        width: 65rem;
     }
 }
 @media screen and (max-width: 1530px) {
     .main-content {
-    width: 55rem;
+        width: 55rem;
     }
 
     .list-of-recipes {
         justify-content: center;
-        
     }
 
     .one-recipe {
-        
         height: 20rem;
     }
 
     .one-recipe img {
         width: 12rem;
-
     }
 }
 
 @media screen and (max-width: 1350px) {
     .main-content {
-    width: 45rem;
+        width: 45rem;
     }
 
     .save-recipe {
@@ -144,37 +133,29 @@
     .main-content {
         margin: 1rem 0 0 2rem;
     }
-    .one-recipe {
-        
+    .one-recipe { 
         width: 30%;
     }
 
     .one-recipe img {
         width: 10rem;
-
     }
 
     .one-recipe a {
         font-size: 1rem;
     }
-
 }
 
 @media screen and (max-width: 1060px) {
     .main-content {
-        
         width: 40rem;
-        
-        
     }
 
     .no-recipes {
         font-size: 1rem;
-    
     }
 
     .one-recipe {
-        
         width: 35%;
     }
 
@@ -185,38 +166,26 @@
 
 @media screen and (max-width: 900px) {
     .main-content {
-        
         width: 33rem;
-        
-        
     }
 }
 
 @media screen and (max-width: 800px) {
     .main-content {
-        
         width: 25rem;
-        
-        
     }
 
-
     .one-recipe {
-        
         width: 60%;
     }
 
     .one-recipe img {
         width: 8rem;
-
     }
 }
 
 @media screen and (max-width: 640px) {
     .main-content {
-        
         width: 20rem;
-        
-        
     }
 }

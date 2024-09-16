@@ -7,9 +7,8 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import food from "./img/food.ico"
 
-
-
 const App = () => {
+  const [loading, setLoading] = useState(false)
   const [recipes, setRecipes] = useState([])
   const [filteredRecipes, setFilteredRecipes] = useState ([])
   const [dishType, setDishType] = useState("")
@@ -35,11 +34,11 @@ const App = () => {
     })
   } 
 
-
-  const appId = "ae8e0993"
-  const appKey = "9f769dfec4f99a9746075132ba6e2422"
+  const appId = process.env.REACT_APP_API_ID
+  const appKey = process.env.REACT_APP_API_KEY
 
     const fetchData = async (query, type="category") => {
+      setLoading(true)
       const url = 'https://api.edamam.com/api/recipes/v2'
       const params = {
         type: "public",
@@ -52,19 +51,31 @@ const App = () => {
         params.dishType = query
       }
 
-
       try {
         const response = await axios.get(url, {params})
         const fetchedRecipes = response.data.hits || []
 
         setRecipes(fetchedRecipes)
         setFilteredRecipes(fetchedRecipes)
-      } catch (error) {
+    } catch (error) {
+        console.error("Error fetching data:", error)
 
-        setRecipes([])
-        setFilteredRecipes([])
+        if (error.response) {
+          console.error(`API responded with status code ${error.response.status}`)
+          alert (`Error: ${error.response.statusText}. Please try again later.`)
+        } else if (error.request) {
+          console.error("No response received:", error.request)
+          alert ("No response from the server. Please check your internet connection.")
+        } else {
+          console.error("Error:", error.message);
+          alert(`Error: ${error.message}`)
+        }
+
+      setRecipes([])
+      setFilteredRecipes([])
+      } finally {
+        setLoading(false);  
       }
-
     };
 
     const handleSearchOrCategoryClick = () => {
@@ -77,10 +88,10 @@ const App = () => {
       setDishType(category)
       setSearchedWord("")
       fetchData(category, "category")
-
     }
 
     const handleSearch = (searchedWord) => {
+      if (!searchedWord.trim()) return
       setShowSavedRecipes(false)
       handleSearchOrCategoryClick()
       setSearchedWord(searchedWord)
@@ -88,44 +99,40 @@ const App = () => {
     }
 
     const getFilteredRecipes = (searchedWord, recipesToFilter) => {
-      
       if (!searchedWord) {
-        setFilteredRecipes(filteredRecipes);
-
+        setFilteredRecipes(recipesToFilter);
       } else {
         const filtered = recipesToFilter.filter(recipe => 
           recipe?.recipe?.label?.toLowerCase().includes(searchedWord.toLowerCase())
         );
-
         setFilteredRecipes(filtered);
-        
       }
     };
   
     useEffect(() => {
       getFilteredRecipes(searchedWord, recipes);
-
     }, [searchedWord, recipes]);
 
-    
-
     const saveOneRecipe = (recipeToSave) => {
-      setListOfRecipes((prevRecipes) => {
+      try {
+        setListOfRecipes((prevRecipes) => {
         const isRecipeSaved = prevRecipes.some((recipe) => recipe.recipe.uri === recipeToSave.recipe.uri)
       
       let updatedRecipes
       if (isRecipeSaved) {
-        updatedRecipes = prevRecipes.filter(
-          (recipe) => recipe.recipe.uri !== recipeToSave.recipe.uri
-        )
+      updatedRecipes = prevRecipes.filter((recipe) => recipe.recipe.uri !== recipeToSave.recipe.uri)
       } else {
         updatedRecipes = [...prevRecipes, recipeToSave]
       }
-
       localStorage.setItem("savedRecipes", JSON.stringify(updatedRecipes))
 
       return updatedRecipes
-    })}
+    })
+  } catch (error) {
+    console.error("Failed to save recipe:", error);
+    alert("An error occurred while saving the recipe. Please try again.");
+  }
+}
       
     useEffect (() => {
       const savedRecipesFromLS = localStorage.getItem("savedRecipes")
@@ -134,7 +141,6 @@ const App = () => {
       }
     }, [])
       
-
     const toggleSavedRecipes = () => {
       changeIconStyle()
       setWasSearched(false)
@@ -145,14 +151,20 @@ const App = () => {
   return <div>
     <img src={food} style={iconStyle} className="icon" alt="fork and knife" />
     <section className="search-part">
-      <Search onSearch={handleSearch} changeIconStyle={changeIconStyle} />
-      <SavedRecipes  
-      toggleSavedRecipes={toggleSavedRecipes}/>
+      <Search onSearch={handleSearch} 
+      changeIconStyle={changeIconStyle} />
+      <SavedRecipes toggleSavedRecipes={toggleSavedRecipes}/>
       <DarkMode />
     </section>
     <section className="main-part">
-      <Category onCategoryClick={handleCategoryClick} changeIconStyle={changeIconStyle}/>
-      <Content recipes={filteredRecipes} saveOneRecipe={saveOneRecipe} wasSearched={wasSearched}listOfRecipes={listOfRecipes} showSavedRecipes={showSavedRecipes} toggleSavedRecipes={toggleSavedRecipes}/>
+      <Category onCategoryClick={handleCategoryClick}
+      changeIconStyle={changeIconStyle}/>
+      {loading ? <div className="spinner"><div className="loading-spinner"></div></div> : <Content recipes={filteredRecipes} 
+      saveOneRecipe={saveOneRecipe} 
+      wasSearched={wasSearched}
+      listOfRecipes={listOfRecipes}
+      showSavedRecipes={showSavedRecipes}
+      toggleSavedRecipes={toggleSavedRecipes}/>}
     </section>
     </div>
 }

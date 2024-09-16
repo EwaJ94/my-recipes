@@ -58,7 +58,6 @@
     right: 0.4rem;
 }
 
-  
 input:checked + .slider:before {
     -webkit-transform: translateX(1.5rem);
     -ms-transform: translateX(1.5rem);
@@ -74,7 +73,6 @@ input:checked + .slider:before {
     .slider:before {
         height: 1.3rem;
         width: 1.3rem;
-        
         bottom: 0.2rem;
     }
 
@@ -84,8 +82,5 @@ input:checked + .slider:before {
     
     .moon {
         width: 1rem;
-
     }
-    
 }
-

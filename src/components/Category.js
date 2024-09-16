@@ -1,7 +1,5 @@
 import "./Category.css"
 
-
-
 const Category = ({onCategoryClick, changeIconStyle}) => {
 
   const categories = [

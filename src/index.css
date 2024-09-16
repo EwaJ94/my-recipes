@@ -1,9 +1,13 @@
 :root {
     --main-bg-color: #e9ede6;
+    --text-color: #69A660;
+    --other-color: #247329;
 }
 
 [data-theme="dark"] {
     --main-bg-color: #012611;
+    --text-color: #B0BFB4;
+    --other-color: #247329;
 }
 
 * {
@@ -38,4 +42,27 @@ body {
     flex-wrap: wrap;
 }
 
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 74rem;
+}
 
+.loading-spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 0.5rem solid var(--text-color);
+    border-top: 0.5rem solid var(--other-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg); 
+    }
+    100% {
+      transform: rotate(360deg); 
+    }
+  }
