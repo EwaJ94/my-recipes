@@ -87,3 +87,9 @@ form {
         font-size: 0.7rem;
     }
 }
+
+@media screen and (max-width: 550px) {
+    .search-recipe {
+        width: 7rem;
+    }
+}

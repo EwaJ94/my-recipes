@@ -82,3 +82,108 @@ body {
       transform: rotate(360deg); 
     }
   }
+
+  @media screen and (max-width: 2560px) {
+    .icon-default {
+        right: 60rem;
+    }
+}
+
+@media screen and (max-width: 2060px) {
+    .icon-default {
+        right: 50rem;
+    }
+}
+
+@media screen and (max-width: 1670px) {
+    .icon-default {
+        right: 40rem;
+    }
+}
+@media screen and (max-width: 1580px) {
+    .icon-default {
+        right: 35rem;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .icon-default {
+        right: 30rem;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .icon-default {
+        right: 25rem;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .icon-default {
+        right: 20rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .icon-default {
+        height: 10rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .icon-default {
+        right: 15rem;
+    }
+    
+    .icon-changed {
+        top: 3rem;
+        left: 4rem;
+        height: 4rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .icon-default {
+        right: 12rem;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .icon-default {
+        right: 10rem;
+    }
+    
+}
+
+@media screen and (max-width: 580px) {
+    .icon-default {
+        height: 7rem;
+    }
+
+    .icon-changed {
+        height: 3rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .icon-default {
+        right: 6rem;
+    }
+
+    .icon-changed {
+        top: 3.5rem;
+        left: 3rem;
+        height: 2rem;
+    }
+}
+
+@media screen and (max-width: 440px) { 
+    .icon-changed {
+        display: none;
+    }
+
+    .search-part {
+        justify-content: center;
+    
+    }
+}

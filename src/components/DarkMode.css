@@ -84,3 +84,19 @@ input:checked + .slider:before {
         width: 1rem;
     }
 }
+@media screen and (max-width: 440px){
+    .dark-mode {
+        margin-right: 0rem;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .switch {
+        width: 3rem;
+    }
+
+    .slider:before {
+       left: 0.08rem;
+    }
+
+}

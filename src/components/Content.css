@@ -96,6 +96,18 @@
     transform: scale(1.1);
 }
 
+@media screen and (max-width: 2560px) {
+    .main-content {
+        width: 100rem;
+    }
+}
+
+@media screen and (max-width: 2060px) {
+    .main-content {
+        width: 80rem;
+    }
+}
+
 @media screen and (max-width: 1670px) {
     .main-content {
         width: 70rem;
@@ -285,4 +297,7 @@
         margin: 0 0.2rem 0.5rem;
     }
     
+    .no-recipes {
+        font-size: 0.7rem;
+    }
 }

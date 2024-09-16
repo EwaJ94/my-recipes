@@ -21,3 +21,9 @@
         margin: 3.6rem 1rem;
     }
 }
+
+@media screen and (max-width: 550px){
+    .heart-icon {
+    margin: 3.5rem 0.5rem;
+    }
+}
