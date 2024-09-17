@@ -84,6 +84,7 @@ input:checked + .slider:before {
         width: 1rem;
     }
 }
+
 @media screen and (max-width: 440px){
     .dark-mode {
         margin-right: 0rem;
@@ -98,5 +99,4 @@ input:checked + .slider:before {
     .slider:before {
        left: 0.08rem;
     }
-
 }

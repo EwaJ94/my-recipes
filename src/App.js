@@ -58,7 +58,6 @@ const App = () => {
 
       setRecipes([])
       setFilteredRecipes([])
-
       } finally {
         setLoading(false);  
       }
@@ -71,7 +70,7 @@ const App = () => {
     const handleSearchOrCategoryClick = () => {
       setWasSearched(true)
     }
-    
+   
     const handleCategoryClick = (category) => {
       setShowSavedRecipes(false)
       handleSearchOrCategoryClick()
@@ -82,10 +81,10 @@ const App = () => {
 
     const handleSearch = (searchedWord) => {
       if (!searchedWord.trim()) return
-      setShowSavedRecipes(false)
-      handleSearchOrCategoryClick()
-      setSearchedWord(searchedWord)
-      fetchData(searchedWord, "search")
+        setShowSavedRecipes(false)
+        handleSearchOrCategoryClick()
+        setSearchedWord(searchedWord)
+        fetchData(searchedWord, "search")
     }
 
     const getFilteredRecipes = (searchedWord, recipesToFilter) => {
@@ -110,12 +109,12 @@ const App = () => {
       
       let updatedRecipes
       if (isRecipeSaved) {
-      updatedRecipes = prevRecipes.filter((recipe) => recipe.recipe.uri !== recipeToSave.recipe.uri)
+        updatedRecipes = prevRecipes.filter((recipe) => recipe.recipe.uri !== recipeToSave.recipe.uri)
       } else {
         updatedRecipes = [...prevRecipes, recipeToSave]
       }
-      localStorage.setItem("savedRecipes", JSON.stringify(updatedRecipes))
 
+      localStorage.setItem("savedRecipes", JSON.stringify(updatedRecipes))
       return updatedRecipes
     })
   } catch (error) {
@@ -139,7 +138,8 @@ const App = () => {
     }
 
   return <div>
-    <img src={food} className={iconChanged ? "icon-changed" : "icon-default"} alt="fork and knife" />
+    <img src={food} 
+    className={iconChanged ? "icon-changed" : "icon-default"} alt="fork and knife" />
     <section className="search-part">
       <Search onSearch={handleSearch} 
       changeIconStyle={changeIconStyle} />
@@ -153,8 +153,7 @@ const App = () => {
       saveOneRecipe={saveOneRecipe} 
       wasSearched={wasSearched}
       listOfRecipes={listOfRecipes}
-      showSavedRecipes={showSavedRecipes}
-      toggleSavedRecipes={toggleSavedRecipes}/>}
+      showSavedRecipes={showSavedRecipes}/>}
     </section>
     </div>
 }

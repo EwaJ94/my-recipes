@@ -96,18 +96,6 @@
     transform: scale(1.1);
 }
 
-@media screen and (max-width: 2560px) {
-    .main-content {
-        width: 100rem;
-    }
-}
-
-@media screen and (max-width: 2060px) {
-    .main-content {
-        width: 80rem;
-    }
-}
-
 @media screen and (max-width: 1670px) {
     .main-content {
         width: 70rem;
@@ -260,7 +248,7 @@
 
     .one-recipe h3 {
         font-size: 1rem;
-        margin: 1rem 2.5rem;
+        margin: 1rem 1rem;
     }
 
     .one-recipe img {
@@ -278,14 +266,21 @@
     .one-recipe a {
         font-size: 0.7rem;
     }
-    
 }
+
 @media screen and (max-width: 425px) { 
     .main-content {
         height: 40rem;
     }
-}
 
+    .one-recipe {
+        height: 17rem;
+    }
+
+    .one-recipe h3 {
+        font-size: 0.75rem;
+    }
+}
 
 @media screen and (max-width: 370px) { 
     .main-content {

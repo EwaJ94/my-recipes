@@ -3,7 +3,7 @@ import { CiHeart } from "react-icons/ci"
 import { FaHeart } from "react-icons/fa"
 import { useState } from "react"
 
-const Content = ({recipes, saveOneRecipe, wasSearched, showSavedRecipes, listOfRecipes, toggleSavedRecipes}) => {
+const Content = ({recipes, saveOneRecipe, wasSearched, showSavedRecipes, listOfRecipes}) => {
 
   const [savedRecipeUris, setSavedRecipeUris] = useState(
     new Set(listOfRecipes.map((recipe) => recipe.recipe.uri))
@@ -24,7 +24,6 @@ const Content = ({recipes, saveOneRecipe, wasSearched, showSavedRecipes, listOfR
   };
   
   return (
-    
     <section className="main-content">
     {wasSearched && recipes.length === 0 ? (
         <div className="no-recipes">

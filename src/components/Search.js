@@ -10,7 +10,6 @@ const Search = ({onSearch, changeIconStyle}) => {
   
   const formSubmit = (e) => {
     e.preventDefault()
-  
     changeIconStyle()
     onSearch(searchedWord)
     setSearchedWord("")

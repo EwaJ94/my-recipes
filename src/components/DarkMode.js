@@ -29,7 +29,6 @@ const DarkMode = () => {
       </span>
     </label>
     </div>
-  
 }
 
 export default DarkMode
