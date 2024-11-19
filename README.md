@@ -1,5 +1,5 @@
 # My recipes - recipe finder application
-This application built with React, allows users to search for recipes by keywords or choose from a set of predefined categories. Users can also save their favorite recipes and toggle between light and dark modes. The application fetches recipes from the Edamam Recipe API.
+This application created in React, allows users to search for recipes by keywords or choose from a set of predefined categories. Users can also save their favorite recipes and toggle between light and dark modes. The application fetches recipes from the Edamam Recipe API.
 
 ## Features
 * Users can search for recipes using a keyword.
