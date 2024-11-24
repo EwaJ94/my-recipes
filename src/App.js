@@ -58,7 +58,9 @@ const App = () => {
 
       setRecipes([])
       setFilteredRecipes([])
-      } finally {
+      } 
+      
+      finally {
         setLoading(false);  
       }
     };
@@ -138,16 +140,21 @@ const App = () => {
     }
 
   return <div>
-    <img src={food} 
+    <img 
+    src={food} 
     className={iconChanged ? "icon-changed" : "icon-default"} alt="fork and knife" />
+    
     <section className="search-part">
-      <Search onSearch={handleSearch} 
+      <Search 
+      onSearch={handleSearch} 
       changeIconStyle={changeIconStyle} />
       <SavedRecipes toggleSavedRecipes={toggleSavedRecipes}/>
       <DarkMode />
     </section>
+
     <section className="main-part">
-      <Category onCategoryClick={handleCategoryClick}
+      <Category 
+      onCategoryClick={handleCategoryClick}
       changeIconStyle={changeIconStyle}/>
       {loading ? <div className="spinner"><div className="loading-spinner"></div></div> : <Content recipes={filteredRecipes} 
       saveOneRecipe={saveOneRecipe} 

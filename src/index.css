@@ -10,10 +10,6 @@
     --other-color: #247329;
 }
 
-* {
-    transition: all 0.3s ease-in-out;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -84,6 +80,7 @@ body {
       transform: rotate(360deg); 
     }
   }
+  
 @media screen and (max-width: 1350px) {
     .icon-default {
         height: 10rem;
