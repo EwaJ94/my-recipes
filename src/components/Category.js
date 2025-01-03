@@ -1,6 +1,6 @@
 import "./Category.css"
 
-const Category = ({onCategoryClick, changeIconStyle}) => {
+const Category = ({onCategoryClick, changeIconStyle, showCategoryPanel, handleShowCategoryPanel}) => {
 
   const categories = [
     'Alcohol-cocktail',
@@ -21,12 +21,16 @@ const Category = ({onCategoryClick, changeIconStyle}) => {
     'Starter',
   ];
   
-    return <section className="category">
+    return <section className={`category ${showCategoryPanel ? "show" : ""}`}>
       <h2>Category</h2>
       <ul className="recipe-category">
       {categories.map((category, index) => (
         <li key={index} 
-        onClick={()=>{onCategoryClick(category);changeIconStyle()}}>{category} </li>
+        onClick={()=>{
+          onCategoryClick(category);
+          changeIconStyle(); 
+          handleShowCategoryPanel(false)
+        }}>{category} </li>
       ))}
       </ul>
       </section>

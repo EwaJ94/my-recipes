@@ -6,6 +6,8 @@ import DarkMode from "./components/DarkMode"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import food from "./img/food.ico"
+import menu from "./img/menu.png"
+import cross from "./img/cross.png"
 
 const App = () => {
   const [loading, setLoading] = useState(false)
@@ -17,6 +19,8 @@ const App = () => {
   const [showSavedRecipes, setShowSavedRecipes] = useState(false)
   const [wasSearched, setWasSearched] = useState(false)
   const [iconChanged, setIconChanged] = useState(false)
+  const [showCategoryPanel, setShowCategoryPanel] = useState(false)
+
 
   const appId = process.env.REACT_APP_API_ID
   const appKey = process.env.REACT_APP_API_KEY
@@ -69,6 +73,10 @@ const App = () => {
       setIconChanged(true)
     }
 
+    const handleShowCategoryPanel = () => {
+      setShowCategoryPanel((prev) => !prev)
+    }
+
     const handleSearchOrCategoryClick = () => {
       setWasSearched(true)
     }
@@ -98,7 +106,7 @@ const App = () => {
         );
         setFilteredRecipes(filtered);
       }
-    };
+    }
   
     useEffect(() => {
       getFilteredRecipes(searchedWord, recipes);
@@ -143,6 +151,17 @@ const App = () => {
     <img 
     src={food} 
     className={iconChanged ? "icon-changed" : "icon-default"} alt="fork and knife" />
+
+    <img 
+    onClick={handleShowCategoryPanel} 
+    src={menu} alt="hamburger menu" 
+    className={`hamburger-menu ${showCategoryPanel ? "hide" : ""}`} />
+    
+    <img 
+    onClick={handleShowCategoryPanel} 
+    src={cross} 
+    alt="cross" 
+    className={`close-menu ${showCategoryPanel ? "show" : ""}`} />
     
     <section className="search-part">
       <Search 
@@ -154,8 +173,11 @@ const App = () => {
 
     <section className="main-part">
       <Category 
+      className = {`category ${showCategoryPanel ? "show" : "inactive-style"}`}
       onCategoryClick={handleCategoryClick}
-      changeIconStyle={changeIconStyle}/>
+      changeIconStyle={changeIconStyle}
+      showCategoryPanel={showCategoryPanel}
+      handleShowCategoryPanel={handleShowCategoryPanel}/>
       {loading ? <div className="spinner"><div className="loading-spinner"></div></div> : <Content recipes={filteredRecipes} 
       saveOneRecipe={saveOneRecipe} 
       wasSearched={wasSearched}

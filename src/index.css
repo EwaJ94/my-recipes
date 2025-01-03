@@ -20,6 +20,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: var(--main-bg-color);
+    position: relative;
 }
 
 .icon-default {
@@ -44,6 +45,18 @@ body {
     transition: 1.2s;
 }
 
+.hamburger-menu {
+    display: none;
+    position: fixed;
+    cursor: pointer;
+}
+
+.close-menu {
+    display: none;
+    position: fixed;
+    cursor: pointer;
+}
+
 .search-part {
     width: 100vw;
     display: flex;
@@ -57,10 +70,9 @@ body {
 }
 
 .spinner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 74rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
 .loading-spinner {
@@ -86,6 +98,7 @@ body {
         height: 10rem;
     }
 }
+
 @media screen and (max-width: 1150px) {
     .icon-default {
         height: 8rem;
@@ -98,9 +111,33 @@ body {
     }
 
     .icon-changed {
-        top: 3rem;
-        left: 4rem;
-        height: 4rem;
+       display: none;
+    }
+
+    .hamburger-menu {
+        display:block;
+        position: absolute;
+        left: 3rem;
+        top: 3.5rem;
+        height: 2rem;
+        opacity: 1;
+    }
+
+    .close-menu {
+        display: none; 
+    }
+
+    .hamburger-menu.hide {
+        display: none;
+    }
+
+    .close-menu.show {
+        display:block;
+        position: absolute;
+        left: 3rem;
+        top: 3.5rem;
+        height: 2rem;
+        opacity: 1;
     }
 }
 

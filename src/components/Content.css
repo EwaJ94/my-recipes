@@ -66,6 +66,7 @@
 
 .one-recipe h3 {
     margin: 1rem 2.5rem;
+    overflow-y:hidden;
 }
 
 .one-recipe img {
@@ -101,6 +102,7 @@
         width: 70rem;
     }
 }
+
 @media screen and (max-width: 1580px) {
     .main-content {
         width: 65rem;
@@ -188,18 +190,7 @@
     }
 }
 
-@media screen and (max-width: 850px) {
-    .main-content {
-        width: 35rem;
-        margin: 1rem 0 0 0;
-    }
-
-    .one-recipe {
-        margin: 0 1rem 1rem;
-    }
-}
-
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 700px) {
     .main-content {
         width: 30rem;
     }
@@ -207,33 +198,11 @@
     .one-recipe {
         width: 50%;
     }
-}
+} 
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 525px) {
     .main-content {
         width: 25rem;
-    }
-
-    .one-recipe {
-        margin: 0 0.5rem 0.5rem;
-    }
-    
-}
-
-@media screen and (max-width: 580px) {
-    .main-content {
-        width: 20rem;
-    }
-
-    .one-recipe {
-        margin: 0 0.5rem 0.5rem;
-    }
-    
-}
-
-@media screen and (max-width: 500px) {
-    .main-content {
-        width: 15rem;
     }
 
     .one-recipe {
@@ -264,35 +233,6 @@
     }
 
     .one-recipe a {
-        font-size: 0.7rem;
-    }
-}
-
-@media screen and (max-width: 425px) { 
-    .main-content {
-        height: 40rem;
-    }
-
-    .one-recipe {
-        height: 17rem;
-    }
-
-    .one-recipe h3 {
-        font-size: 0.75rem;
-    }
-}
-
-@media screen and (max-width: 370px) { 
-    .main-content {
-        width: 10rem;
-    }
-
-    .one-recipe {
-        width: 8rem;
-        margin: 0 0.2rem 0.5rem;
-    }
-    
-    .no-recipes {
         font-size: 0.7rem;
     }
 }
