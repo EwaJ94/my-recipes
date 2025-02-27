@@ -144,7 +144,7 @@ const App = () => {
       setFilteredRecipes([])
     }
 
-  return <div>
+  return <>
     <img 
     src={food} 
     className={iconChanged ? "icon-changed" : "icon-default"} alt="fork and knife" />
@@ -181,7 +181,7 @@ const App = () => {
       listOfFavoriteRecipes={listOfFavoriteRecipes}
       showSavedRecipes={showSavedRecipes}/>}
     </section>
-    </div>
+    </>
 }
 
 export default App
