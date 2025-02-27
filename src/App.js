@@ -14,7 +14,7 @@ const App = () => {
   const [recipes, setRecipes] = useState([])
   const [filteredRecipes, setFilteredRecipes] = useState ([])
   const [searchedWord, setSearchedWord] = useState("")
-  const [listOfRecipes, setListOfRecipes] = useState([])
+  const [listOfFavoriteRecipes, setlistOfFavoriteRecipes] = useState([])
   const [showSavedRecipes, setShowSavedRecipes] = useState(false)
   const [wasSearched, setWasSearched] = useState(false)
   const [iconChanged, setIconChanged] = useState(false)
@@ -111,7 +111,7 @@ const App = () => {
 
     const saveOneRecipe = (recipeToSave) => {
       try {
-        setListOfRecipes((prevRecipes) => {
+        setlistOfFavoriteRecipes((prevRecipes) => {
         const isRecipeSaved = prevRecipes.some((recipe) => recipe.recipe.uri === recipeToSave.recipe.uri)
       
       let updatedRecipes
@@ -133,7 +133,7 @@ const App = () => {
     useEffect (() => {
       const savedRecipesFromLS = localStorage.getItem("savedRecipes")
       if (savedRecipesFromLS) {
-        setListOfRecipes(JSON.parse(savedRecipesFromLS))
+        setlistOfFavoriteRecipes(JSON.parse(savedRecipesFromLS))
       }
     }, [])
       
@@ -178,7 +178,7 @@ const App = () => {
       {loading ? <div className="spinner"><div className="loading-spinner"></div></div> : <Content recipes={filteredRecipes} 
       saveOneRecipe={saveOneRecipe} 
       wasSearched={wasSearched}
-      listOfRecipes={listOfRecipes}
+      listOfFavoriteRecipes={listOfFavoriteRecipes}
       showSavedRecipes={showSavedRecipes}/>}
     </section>
     </div>

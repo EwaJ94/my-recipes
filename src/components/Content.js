@@ -3,10 +3,10 @@ import { CiHeart } from "react-icons/ci"
 import { FaHeart } from "react-icons/fa"
 import { useState } from "react"
 
-const Content = ({recipes, saveOneRecipe, wasSearched, showSavedRecipes, listOfRecipes}) => {
+const Content = ({recipes, saveOneRecipe, wasSearched, showSavedRecipes, listOfFavoriteRecipes}) => {
 
   const [savedRecipeUris, setSavedRecipeUris] = useState(
-    new Set(listOfRecipes.map((recipe) => recipe.recipe.uri))
+    new Set(listOfFavoriteRecipes.map((recipe) => recipe.recipe.uri))
   );
 
   const handleSaveRecipe = (recipe) => {
@@ -56,10 +56,10 @@ const Content = ({recipes, saveOneRecipe, wasSearched, showSavedRecipes, listOfR
 
       {showSavedRecipes && (
         <section className="list-of-saved-recipes">
-          {listOfRecipes.length > 0 ? (
+          {listOfFavoriteRecipes.length > 0 ? (
             <div className="recipes-section">
               <ul className="list-of-recipes">
-                {listOfRecipes.map((savedRecipes, index) => ( 
+                {listOfFavoriteRecipes.map((savedRecipes, index) => ( 
                   <li key={index} className="one-recipe">
                     <FaHeart className="save-recipe" onClick={() => handleSaveRecipe(savedRecipes)}/>
                   <h3 className="recipe-title">{savedRecipes.recipe.label}</h3>
