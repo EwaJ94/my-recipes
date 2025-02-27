@@ -13,14 +13,12 @@ const App = () => {
   const [loading, setLoading] = useState(false)
   const [recipes, setRecipes] = useState([])
   const [filteredRecipes, setFilteredRecipes] = useState ([])
-  const [dishType, setDishType] = useState("")
   const [searchedWord, setSearchedWord] = useState("")
   const [listOfRecipes, setListOfRecipes] = useState([])
   const [showSavedRecipes, setShowSavedRecipes] = useState(false)
   const [wasSearched, setWasSearched] = useState(false)
   const [iconChanged, setIconChanged] = useState(false)
   const [showCategoryPanel, setShowCategoryPanel] = useState(false)
-
 
   const appId = process.env.REACT_APP_API_ID
   const appKey = process.env.REACT_APP_API_KEY
@@ -84,7 +82,6 @@ const App = () => {
     const handleCategoryClick = (category) => {
       setShowSavedRecipes(false)
       handleSearchOrCategoryClick()
-      setDishType(category)
       setSearchedWord("")
       fetchData(category, "category")
     }
